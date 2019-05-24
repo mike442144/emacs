@@ -9,6 +9,8 @@
 
 (require 'init-js)
 (require 'init-elpa)
+(require 'init-company)
+(require 'init-flycheck)
 (require 'init-markdown)
 (require 'init-web-beautify)
 
@@ -26,7 +28,7 @@
  '(indent-tabs-mode t)
  '(package-selected-packages
    (quote
-	(web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
@@ -45,6 +47,3 @@
  ;; If there is more than one, they won't work right.
  )
 
-
-
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
