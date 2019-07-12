@@ -9,10 +9,12 @@
 
 (require 'init-js)
 (require 'init-elpa)
+(require 'init-smex)
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-markdown)
 (require 'init-web-beautify)
+(require 'init-numbering-window)
 
 ;; (eval-after-load "org" '(require 'ox-md nil t))
 
@@ -28,7 +30,7 @@
  '(indent-tabs-mode t)
  '(package-selected-packages
    (quote
-	(company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
