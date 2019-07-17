@@ -1,6 +1,13 @@
 ;; init.el
 
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list
  'load-path
  (expand-file-name "lisp" user-emacs-directory))
@@ -28,9 +35,10 @@
  ;; If there is more than one, they won't work right.
  '(fancy-splash-image "/home/bda/图片/logo.png")
  '(indent-tabs-mode t)
+ '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-	(window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(buffer-move highlight-symbol window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
