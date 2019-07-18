@@ -38,7 +38,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-	(buffer-move highlight-symbol window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(add-hooks buffer-move highlight-symbol window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
@@ -57,3 +57,12 @@
  ;; If there is more than one, they won't work right.
  )
 
+(defun my-comment-or-uncomment-region (beg end &optional arg)  
+  (interactive (if (use-region-p)  
+                   (list (region-beginning) (region-end) nil)  
+                 (list (line-beginning-position)  
+                       (line-beginning-position 2))))  
+  (comment-or-uncomment-region beg end arg)  
+)  
+(global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)  
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
