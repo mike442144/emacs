@@ -1,6 +1,12 @@
 ;; init.el
-
-
+;; load emacs 24's package system. Add MELPA repository.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -25,7 +31,6 @@
 
 ;; (eval-after-load "org" '(require 'ox-md nil t))
 
-
 (setq user-mail-address "jinglei.chen@bda.com")
 (setq mail-signature t)
 (custom-set-variables
@@ -38,7 +43,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-	(add-hooks buffer-move highlight-symbol window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(leetcode add-hooks buffer-move highlight-symbol window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
