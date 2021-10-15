@@ -1,5 +1,7 @@
-;;;js
+;;; js --- javascript IDE
+;;; Commentary:
 
+;;; Code:
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -14,14 +16,6 @@
          (lambda (output)
            (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))))
 
-(setq inferior-js-program-command "node --interactive")
-
-(add-hook 'js2-mode-hook 
-          '(lambda ()
-            (local-set-key (kbd "C-c C-c") 'js-send-last-sexp)
-            (local-set-key (kbd "C-x C-r") 'js-send-region)
-            (local-set-key (kbd "C-M-x") 'js-send-last-sexp-and-go)
-            (local-set-key (kbd "C-c b") 'js-send-buffer)
-            (local-set-key (kbd "C-c C-b") 'js-send-buffer-and-go)))
-
 (provide 'init-js)
+
+;;; init-js ends here

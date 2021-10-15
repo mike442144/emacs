@@ -1,13 +1,18 @@
-;; init.el
+;;; init.el: --- initialize modules
+;;; Commentary:
 
-
+;;; Code:
 (add-to-list
  'load-path
  (expand-file-name "lisp" user-emacs-directory))
 
 (load-theme 'tango-dark)
+(if window-system
+    (tool-bar-mode -1)
+  )
 
 (require 'init-js)
+(require 'init-js-comint)
 (require 'init-elpa)
 (require 'init-smex)
 (require 'init-magit)
@@ -35,7 +40,7 @@
  '(indent-tabs-mode t)
  '(package-selected-packages
    (quote
-	(all-the-icons neotree git-gutter magit window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(js-comint meghanada helm pug-mode all-the-icons neotree git-gutter magit window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
