@@ -6,7 +6,6 @@
  'load-path
  (expand-file-name "lisp" user-emacs-directory))
 
-(load-theme 'tango-dark)
 (if window-system
     (tool-bar-mode -1)
   )
@@ -26,6 +25,10 @@
 (require 'init-numbering-window)
 
 
+;;; (require 'color-theme-sanityinc-tomorrow)
+(load-theme 'zenburn t)
+
+
 ;; (eval-after-load "org" '(require 'ox-md nil t))
 
 
@@ -40,7 +43,7 @@
  '(indent-tabs-mode t)
  '(package-selected-packages
    (quote
-	(js-comint meghanada helm pug-mode all-the-icons neotree git-gutter magit window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
+	(zenburn-theme color-theme-sanityinc-tomorrow solarized-theme js-comint meghanada helm pug-mode all-the-icons neotree git-gutter magit window-numbering smex company web-beautify markdown-mode js2-mode yaml-mode org mocha json-mode haskell-mode flycheck)))
  '(safe-local-variable-values
    (quote
 	((mocha-reporter . "spec")
