@@ -5,6 +5,8 @@
 (autoload 'js2-mode "js2-mode" nil t)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; Better imenu
+(add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
 
 (setq inferior-js-mode-hook
       (lambda ()
