@@ -19,3 +19,8 @@
 elpa
 *~
 tramp
+tutorial/
+transient/
+eln-cache/
+.cache/
+.mc-lists.el
